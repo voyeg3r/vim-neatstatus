@@ -153,7 +153,7 @@ if has('statusline')
         let &stl.="%= "
 
         " readonly flag
-        let &stl.="%(%{(&ro!=0?'(readonly)':'')} ".g:NeatStatusLine_separator." %)"
+        let &stl.="%(%{(&ro!=0?'':'')} ".g:NeatStatusLine_separator." %)"
 
         " file type (eg. python, ruby, etc..)
         let &stl.="%8*%( %{&filetype} %)%0* "
