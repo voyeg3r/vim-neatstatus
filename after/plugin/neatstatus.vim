@@ -23,7 +23,7 @@ if !exists('g:NeatStatusLine_color_normal')     "black         green
 endif
 
 if !exists('g:NeatStatusLine_color_insert')     "whithe        blue
-    let g:NeatStatusLine_color_insert   = 'guifg=#ffffff guibg=#09B0D1 gui=bold ctermfg=15 ctermbg=9 cterm=bold'
+    let g:NeatStatusLine_color_insert   = 'guifg=#ffffff guibg=#FF9800 gui=bold ctermfg=15 ctermbg=9 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_color_replace')
@@ -35,23 +35,23 @@ if !exists('g:NeatStatusLine_color_visual') "    white         deeppink
 endif
 
 if !exists('g:NeatStatusLine_color_position')
-    let g:NeatStatusLine_color_position = 'guifg=#ffffff guibg=#000000 ctermfg=15 ctermbg=0'
+    let g:NeatStatusLine_color_position = 'guifg=#ffffff guibg=#424242 ctermfg=15 ctermbg=0'
 endif
 
 if !exists('g:NeatStatusLine_color_modified')
-    let g:NeatStatusLine_color_modified = 'guifg=#000000 guibg=#229988 ctermfg=15 ctermbg=0'
+    let g:NeatStatusLine_color_modified = 'guifg=#FF5722 guibg=#229988 ctermfg=15 ctermbg=0'
 endif
 
 if !exists('g:NeatStatusLine_color_line')
-    let g:NeatStatusLine_color_line    = 'guifg=#000000 guibg=gray gui=bold ctermfg=207 ctermbg=0 cterm=bold'
+    let g:NeatStatusLine_color_line    = 'guifg=#000000 guibg=#424242 gui=bold ctermfg=207 ctermbg=0 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_color_filetype')
-    let g:NeatStatusLine_color_filetype = 'guifg=#000000 guibg=SlateGray gui=bold ctermfg=0 ctermbg=7 cterm=bold'
+    let g:NeatStatusLine_color_filetype = 'guifg=#000000 guibg=#424242 gui=bold ctermfg=0 ctermbg=7 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_separator')
-    let g:NeatStatusLine_separator = ' '
+    let g:NeatStatusLine_separator = ' | '
 endif
 
 "==============================================================================
@@ -168,13 +168,10 @@ if has('statusline')
         let &stl.=" %<%F "
         " read only, modified, modifiable flags in brackets
         "let &stl.="%([%R%M]%) "
-
         " right-aligh everything past this point
         let &stl.="%= "
-
         " readonly flag
         let &stl.="%(%{(&ro!=0?'':'')} ".g:NeatStatusLine_separator." %)"
-
         " file type (eg. python, ruby, etc..)
         let &stl.="%8*%( %{&filetype} %)%0* "
         " file format (eg. unix, dos, etc..)
@@ -182,13 +179,13 @@ if has('statusline')
         " file encoding (eg. utf8, latin1, etc..)
         let &stl.="%(%{(&fenc!=''?&fenc:&enc)} ".g:NeatStatusLine_separator." %)"
         " buffer number
-        let &stl.="b%n "
+        let &stl.="buf:%n "
         "line number (pink) / total lines
-        let &stl.="%5*  l %7*%-4.l%5*/%-4.L\ %0* "
+        let &stl.="l:%l/%L "
         " percentage done
-        let &stl.="%-3.p%% ".g:NeatStatusLine_separator." "
+        let &stl.="%p%% ".g:NeatStatusLine_separator." "
         " column number (minimum width is 4)
-        let &stl.="c %-3.c "
+        let &stl.="col:%c "
         " modified / unmodified (purple)
         let &stl.="%(%6* %{&modified ? '+':''} %)"
     endfunc
