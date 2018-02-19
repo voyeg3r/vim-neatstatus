@@ -39,7 +39,7 @@ if !exists('g:NeatStatusLine_color_position')
 endif
 
 if !exists('g:NeatStatusLine_color_modified')
-    let g:NeatStatusLine_color_modified = 'guifg=#FF5722 guibg=#229988 ctermfg=15 ctermbg=0'
+    let g:NeatStatusLine_color_modified = 'guifg=#FF5722 guibg=#5f8787 ctermfg=15 ctermbg=0'
 endif
 
 if !exists('g:NeatStatusLine_color_line')
@@ -47,11 +47,12 @@ if !exists('g:NeatStatusLine_color_line')
 endif
 
 if !exists('g:NeatStatusLine_color_filetype')
-    let g:NeatStatusLine_color_filetype = 'guifg=#000000 guibg=#424242 gui=bold ctermfg=0 ctermbg=7 cterm=bold'
+    let g:NeatStatusLine_color_filetype = 'guifg=#000000 guibg=#5f8787 gui=bold ctermfg=0 ctermbg=7 cterm=bold'
 endif
 
+" cor da paleta #5f8787
 if !exists('g:NeatStatusLine_color_paste')
-    let g:NeatStatusLine_color_paste = 'guifg=#FF5722 guibg=#5f8787 gui=bold ctermfg=0 ctermbg=7 cterm=bold'
+    let g:NeatStatusLine_color_paste = 'guifg=#5f8787 guibg=#FF5722 gui=bold ctermfg=0 ctermbg=7 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_separator')
@@ -172,13 +173,15 @@ if has('statusline')
         let &stl.=" #%n"
         " file path
         let &stl.=" %<%F "
+        " modified / unmodified (purple)
+        let &stl.="%(%6* %{&modified ? '[+]':''} %)%0*"
         " read only, modified, modifiable flags in brackets
         "let &stl.="%([%R%M]%) "
         " right-aligh everything past this point
         let &stl.="%= "
-        let &stl.="%9*%(%{(&paste!=0?' paste':'')} ".g:NeatStatusLine_separator." %)%0*"
         " readonly flag
-        let &stl.="%5*%(%{(&ro!=0?'':'')} ".g:NeatStatusLine_separator." %)%0*"
+        let &stl.="%6*%(%{(&ro!=0?' ':'')}%)%0*"
+        let &stl.="%9*%(%{(&paste!=0?'PASTE':'')}%)%0* "
         " file type (eg. python, ruby, etc..)
         let &stl.="%8*%( %{&filetype} %)%0* "
         " file format (eg. unix, dos, etc..)
@@ -191,8 +194,6 @@ if has('statusline')
         let &stl.="%p%% ".g:NeatStatusLine_separator." "
         " column number (minimum width is 4)
         let &stl.="col:%2c "
-        " modified / unmodified (purple)
-        let &stl.="%(%6* %{&modified ? '+':''} %)"
     endfunc
 
     "FIXME: hack to fix the repeated statusline issue in console version
