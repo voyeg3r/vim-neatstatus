@@ -43,11 +43,11 @@ if !exists('g:NeatStatusLine_color_modified')
 endif
 
 if !exists('g:NeatStatusLine_color_line')
-    let g:NeatStatusLine_color_line    = 'guifg=#000000 guibg=#772299 gui=bold ctermfg=207 ctermbg=0 cterm=bold'
+    let g:NeatStatusLine_color_line    = 'guifg=#000000 guibg=gray gui=bold ctermfg=207 ctermbg=0 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_color_filetype')
-    let g:NeatStatusLine_color_filetype = 'guifg=#000000 guibg=#77ff55 gui=bold ctermfg=0 ctermbg=7 cterm=bold'
+    let g:NeatStatusLine_color_filetype = 'guifg=#000000 guibg=SlateGray gui=bold ctermfg=0 ctermbg=7 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_separator')
