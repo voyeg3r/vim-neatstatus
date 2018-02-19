@@ -164,13 +164,13 @@ if has('statusline')
         " file encoding (eg. utf8, latin1, etc..)
         let &stl.="%(%{(&fenc!=''?&fenc:&enc)} ".g:NeatStatusLine_separator." %)"
         " buffer number
-        let &stl.="BUF #%n "
+        let &stl.="buf #%n "
         "line number (pink) / total lines
-        let &stl.="%5*  LN %7*%-4.l%5*/%-4.L\ %0* "
+        let &stl.="%5*  ln %7*%-4.l%5*/%-4.L\ %0* "
         " percentage done
         let &stl.="(%-3.p%%) ".g:NeatStatusLine_separator." "
         " column number (minimum width is 4)
-        let &stl.="COL %-3.c "
+        let &stl.="col %-3.c "
         " modified / unmodified (purple)
         let &stl.="%(%6* %{&modified ? 'modified':''} %)"
 
