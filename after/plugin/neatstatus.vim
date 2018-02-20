@@ -174,11 +174,11 @@ if has('statusline')
 
         let &stl=""
         " mode (changes color)
-        let &stl.="%1*\ %{Mode()} %0*"
+        let &stl.="%1*\ %{Mode()}%0*"
         " session name
         "let &stl.="%5* %{g:neatstatus_session} %0*"
         " buffer number
-        let &stl.=" [%n]"
+        let &stl.=" [%n] "
         let &stl.="%6* %{GitInfo()}%0*"
         " file path
         let &stl.=" %<%F"
@@ -199,11 +199,11 @@ if has('statusline')
         " file encoding (eg. utf8, latin1, etc..)
         let &stl.="%(%{(&fenc!=''?&fenc:&enc)}".g:NeatStatusLine_separator." %)"
         "line number (pink) / total lines
-        let &stl.=" %3.l/%3.L "
+        let &stl.=" %04l/%04v "
         " percentage done
         let &stl.="%p%% ".g:NeatStatusLine_separator." "
         " column number (minimum width is 4)
-        let &stl.="col:%2c "
+        let &stl.="Total:%2L "
     endfunc
 
     "FIXME: hack to fix the repeated statusline issue in console version
