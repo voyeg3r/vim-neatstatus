@@ -10,6 +10,7 @@
 " Loosely based on a script by Tomas Restrepo (winterdom.com)
 " " Original available here:
 " http://winterdom.com/2007/06/vimstatusline
+" colors: https://material.io/guidelines/style/color.html#color-color-palette
 
 set ls=2 " Always show status line
 let g:last_mode=""
