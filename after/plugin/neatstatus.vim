@@ -39,11 +39,11 @@ if !exists('g:NeatStatusLine_color_position')
 endif
 
 if !exists('g:NeatStatusLine_color_modified')
-    let g:NeatStatusLine_color_modified = 'guifg=#ffffff guibg=#000000 gui=bold ctermfg=15 ctermbg=0'
+    let g:NeatStatusLine_color_modified = 'guifg=#ffffff guibg=#5f8787 gui=bold ctermfg=15 ctermbg=0'
 endif
 
 if !exists('g:NeatStatusLine_color_line')
-    let g:NeatStatusLine_color_line    = 'guifg=#000000 guibg=#424242 gui=bold ctermfg=207 ctermbg=0 cterm=bold'
+    let g:NeatStatusLine_color_line    = 'guifg=#ffffff guibg=#5f8787 gui=bold ctermfg=207 ctermbg=0 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_color_filetype')
@@ -91,6 +91,14 @@ function! Mode()
     else                 | return l:mode
     endif
 endfunc
+
+function! GitInfo()
+  let git = fugitive#head()
+  if git != ''
+    return ' '.fugitive#head()
+  else
+    return ''
+endfunction
 
 "==============================================================================
 "==============================================================================
@@ -170,11 +178,12 @@ if has('statusline')
         " session name
         "let &stl.="%5* %{g:neatstatus_session} %0*"
         " buffer number
-        let &stl.=" #%n"
+        let &stl.=" [%n]"
+        let &stl.="%6* %{GitInfo()}%0*"
         " file path
-        let &stl.=" %<%F "
+        let &stl.=" %<%F"
         " modified / unmodified (purple)
-        let &stl.="%(%6*%{&modified ? '[+]':''}%)%0*"
+        let &stl.="%(%6*%{&modified ? '+':''}%)%0*"
         " read only, modified, modifiable flags in brackets
         "let &stl.="%([%R%M]%) "
         " right-aligh everything past this point
@@ -190,7 +199,7 @@ if has('statusline')
         " file encoding (eg. utf8, latin1, etc..)
         let &stl.="%(%{(&fenc!=''?&fenc:&enc)}".g:NeatStatusLine_separator." %)"
         "line number (pink) / total lines
-        let &stl.="l:%3.l/%3.L "
+        let &stl.=" %3.l/%3.L "
         " percentage done
         let &stl.="%p%% ".g:NeatStatusLine_separator." "
         " column number (minimum width is 4)
