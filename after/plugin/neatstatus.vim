@@ -23,7 +23,7 @@ if !exists('g:NeatStatusLine_color_normal')     "black         green
 endif
 
 if !exists('g:NeatStatusLine_color_insert')
-    let g:NeatStatusLine_color_insert   = 'guifg=#ffffff guibg=#FFC107 gui=bold ctermfg=15 ctermbg=9 cterm=bold'
+    let g:NeatStatusLine_color_insert   = 'guifg=#000000 guibg=#4FC3F7 gui=bold ctermfg=15 ctermbg=9 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_color_replace')
@@ -39,7 +39,7 @@ if !exists('g:NeatStatusLine_color_position')
 endif
 
 if !exists('g:NeatStatusLine_color_modified')
-    let g:NeatStatusLine_color_modified = 'guifg=#FF5722 guibg=#5f8787 ctermfg=15 ctermbg=0'
+    let g:NeatStatusLine_color_modified = 'guifg=#ffffff guibg=#000000 gui=bold ctermfg=15 ctermbg=0'
 endif
 
 if !exists('g:NeatStatusLine_color_line')
@@ -179,9 +179,10 @@ if has('statusline')
         "let &stl.="%([%R%M]%) "
         " right-aligh everything past this point
         let &stl.="%= "
+        " TODO: show clipboard v V or b and clipboard + 0 or "
         " readonly flag
-        let &stl.="%6*%(%{(&ro!=0?' ':'')}%)%0*"
-        let &stl.="%9*%(%{(&paste!=0?'PASTE':'')}%)%0* "
+        let &stl.="%6*%(%{(&ro!=0?'  ':'')}%)%0*"
+        let &stl.="%9*%(%{(&paste!=0?' PASTE ':'')}%)%0* "
         " file type (eg. python, ruby, etc..)
         let &stl.="%8*%( %{&filetype} %)%0* "
         " file format (eg. unix, dos, etc..)
