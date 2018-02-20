@@ -174,7 +174,7 @@ if has('statusline')
         " file path
         let &stl.=" %<%F "
         " modified / unmodified (purple)
-        let &stl.="%(%6* %{&modified ? '[+]':''} %)%0*"
+        let &stl.="%(%6*%{&modified ? '[+]':''}%)%0*"
         " read only, modified, modifiable flags in brackets
         "let &stl.="%([%R%M]%) "
         " right-aligh everything past this point
