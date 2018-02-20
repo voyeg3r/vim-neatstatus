@@ -27,7 +27,7 @@ Screenshots
 
 Here is how this status line will look in Gvim on Windows with the Solarized color scheme:
 
-![Neat Statusline](https://imgur.com/a/h7GuQ)
+![Neat Statusline](https://i.imgur.com/GoAiVut.png)
 
 Information provided from left to right:
 
