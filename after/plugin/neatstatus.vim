@@ -5,7 +5,7 @@
 "   |  \| |/ _ \/ _` | __\___ \| __/ _` | __| | | / __|
 "   | |\  |  __/ (_| | |_ ___) | || (_| | |_| |_| \__ \
 "   |_| \_|\___|\__,_|\__|____/ \__\__,_|\__|\__,_|___/
-"   Vim plugin by Luke Maciak (c) 2012
+"   Vim plugin by Luke Maciak (c) 2012 - voyeg3's version
 "
 " Loosely based on a script by Tomas Restrepo (winterdom.com)
 " " Original available here:
@@ -21,7 +21,6 @@ let g:last_mode=""
 " Black on Green
 if !exists('g:NeatStatusLine_color_normal')     "black         green
     let g:NeatStatusLine_color_normal   = 'guifg=#000000 guibg=#76FF03 gui=bold ctermfg=0 ctermbg=2 cterm=NONE'
-    "let g:NeatStatusLine_color_normal   = 'guifg=#000000 guibg=#5DC700 gui=bold ctermfg=0 ctermbg=2 cterm=NONE'
 endif
 
 if !exists('g:NeatStatusLine_color_insert')
@@ -41,7 +40,7 @@ if !exists('g:NeatStatusLine_color_position')
 endif
 
 if !exists('g:NeatStatusLine_color_modified')
-    let g:NeatStatusLine_color_modified = 'guifg=#2C323C guibg=#5f8787 gui=bold ctermfg=15 ctermbg=0'
+    let g:NeatStatusLine_color_modified = 'guifg=#ffffff guibg=#2C323C gui=bold ctermfg=15 ctermbg=0'
 endif
 
 if !exists('g:NeatStatusLine_color_line')
@@ -61,7 +60,6 @@ if !exists('g:NeatStatusLine_separator')
     let g:NeatStatusLine_separator = ' | '
 endif
 
-"==============================================================================
 "==============================================================================
 
 " Set up the colors for the status bar
@@ -149,7 +147,6 @@ if has('statusline')
     " v:register - if we are using + 0 or " registers
     "
     function! SetStatusLineStyle()
-
         " Determine the name of the session or terminal
         if (strlen(v:servername)>0)
             if v:servername =~ 'nvim'
