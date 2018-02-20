@@ -41,7 +41,7 @@ if !exists('g:NeatStatusLine_color_position')
 endif
 
 if !exists('g:NeatStatusLine_color_modified')
-    let g:NeatStatusLine_color_modified = 'guifg=#ffffff guibg=#5f8787 gui=bold ctermfg=15 ctermbg=0'
+    let g:NeatStatusLine_color_modified = 'guifg=#2C323C guibg=#5f8787 gui=bold ctermfg=15 ctermbg=0'
 endif
 
 if !exists('g:NeatStatusLine_color_line')
@@ -49,7 +49,7 @@ if !exists('g:NeatStatusLine_color_line')
 endif
 
 if !exists('g:NeatStatusLine_color_filetype')
-    let g:NeatStatusLine_color_filetype = 'guifg=#000000 guibg=#5f8787 gui=bold ctermfg=0 ctermbg=7 cterm=bold'
+    let g:NeatStatusLine_color_filetype = 'guifg=#000000 guibg=#2C323C gui=bold ctermfg=0 ctermbg=7 cterm=bold'
 endif
 
 " cor da paleta #5f8787
@@ -179,8 +179,8 @@ if has('statusline')
         " session name
         "let &stl.="%5* %{g:neatstatus_session} %0*"
         " buffer number
-        let &stl.=" [%n]"
-        let &stl.="%6* %{GitInfo()}%0*"
+        let &stl.=" [%n] "
+        let &stl.="%6*%{GitInfo()}%0*"
         " file path
         let &stl.=" %<%F"
         " modified / unmodified (purple)
