@@ -202,7 +202,7 @@ if has('statusline')
         "line number (pink) / total lines
         let &stl.=" %04l/%04v "
         " percentage done
-        let &stl.="%p%% ".g:NeatStatusLine_separator." "
+        let &stl.="%03p%% ".g:NeatStatusLine_separator." "
         " column number (minimum width is 4)
         let &stl.="Total:%04L "
     endfunc
