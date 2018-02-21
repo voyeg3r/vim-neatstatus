@@ -11,6 +11,9 @@
 " " Original available here:
 " http://winterdom.com/2007/06/vimstatusline
 " colors:
+"
+" Some symbols to use:
+"  
 
 set ls=2 " Always show status line
 let g:last_mode=""
@@ -178,32 +181,31 @@ if has('statusline')
         let &stl.=" [%n] "
         let &stl.="%6*%{GitInfo()}%0*"
         " file path
-        let &stl.=" %<%F"
+        let &stl.=" %<%f"
         " modified / unmodified (purple)
-        let &stl.="%(%6*%{&modified ? '+':''}%)%0*"
+        let &stl.="%03(%6*%{&modified ? ' + ':''}%)%0*"
         " read only, modified, modifiable flags in brackets
         "let &stl.="%([%R%M]%) "
         " right-aligh everything past this point
         let &stl.="%= "
         " TODO: show clipboard v V or b and clipboard + 0 or "
         " readonly flag
-        let &stl.="%6*%(%{(&ro!=0?'  ':'')}%)%0*"
-        " set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\
-		" higlight search on
+        let &stl.="%6*%(%{(&ro!=0?'  ':'')}%)%0*"
+        let &stl.="%6*%01(%{&list?'¶':''}%)%0* "
         let &stl.="%6*%01(%{&hls?'H':''}%)%0* "
-        let &stl.="%9*%01(%{(&paste?'P':'')}%)%0* "
+        let &stl.="%6*%01(%{(&paste?'P':'')}%)%0* "
         " file type (eg. python, ruby, etc..)
-        let &stl.="%8*%(%{&filetype}%)%0* "
+        let &stl.="%(%{&filetype}%)%0*".g:NeatStatusLine_separator
         " file format (eg. unix, dos, etc..)
-        let &stl.="%{&fileformat}".g:NeatStatusLine_separator." "
+        let &stl.="%{&fileformat}".g:NeatStatusLine_separator
         " file encoding (eg. utf8, latin1, etc..)
-        let &stl.="%(%{(&fenc!=''?&fenc:&enc)}".g:NeatStatusLine_separator." %)"
+        let &stl.="%(%{(&fenc!=''?&fenc:&enc)}%)".g:NeatStatusLine_separator
         "line number (pink) / total lines
-        let &stl.=" %04l/%04v "
+        let &stl.=" %03l/%03L".g:NeatStatusLine_separator
         " percentage done
-        let &stl.="%03p%% ".g:NeatStatusLine_separator." "
-        " column number (minimum width is 4)
-        let &stl.="Total:%04L "
+        let &stl.="%03p%%".g:NeatStatusLine_separator
+        " column number (minimum width is 2)
+        let &stl.="%02v "
     endfunc
 
     "FIXME: hack to fix the repeated statusline issue in console version
