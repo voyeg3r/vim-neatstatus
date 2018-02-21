@@ -53,7 +53,7 @@ endif
 
 " cor da paleta #5f8787
 if !exists('g:NeatStatusLine_color_paste')
-    let g:NeatStatusLine_color_paste = 'guifg=#FF5722 guibg=#ffffff gui=bold ctermfg=0 ctermbg=7 cterm=bold'
+    let g:NeatStatusLine_color_paste = 'guifg=#FF5722 guibg=#5f8787 gui=bold ctermfg=0 ctermbg=7 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_separator')
