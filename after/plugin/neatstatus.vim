@@ -48,12 +48,12 @@ if !exists('g:NeatStatusLine_color_line')
 endif
 
 if !exists('g:NeatStatusLine_color_filetype')
-    let g:NeatStatusLine_color_filetype = 'guifg=#000000 guibg=#2C323C gui=bold ctermfg=0 ctermbg=7 cterm=bold'
+    let g:NeatStatusLine_color_filetype = 'guifg=#ffffff guibg=#2C323C gui=bold ctermfg=0 ctermbg=7 cterm=bold'
 endif
 
 " cor da paleta #5f8787
 if !exists('g:NeatStatusLine_color_paste')
-    let g:NeatStatusLine_color_paste = 'guifg=#ffffff guibg=#FF5722 gui=bold ctermfg=0 ctermbg=7 cterm=bold'
+    let g:NeatStatusLine_color_paste = 'guifg=#FF5722 guibg=#ffffff gui=bold ctermfg=0 ctermbg=7 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_separator')
@@ -98,7 +98,6 @@ function! GitInfo()
     return ''
 endfunction
 
-"==============================================================================
 "==============================================================================
 
 if has('statusline')
@@ -189,7 +188,10 @@ if has('statusline')
         " TODO: show clipboard v V or b and clipboard + 0 or "
         " readonly flag
         let &stl.="%6*%(%{(&ro!=0?'  ':'')}%)%0*"
-        let &stl.="%9*%(%{(&paste!=0?' PASTE ':'')}%)%0* "
+        " set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\
+		" higlight search on
+        let &stl.="%6*%01(%{&hls?'H':''}%)%0* "
+        let &stl.="%9*%01(%{(&paste?'P':'')}%)%0* "
         " file type (eg. python, ruby, etc..)
         let &stl.="%8*%(%{&filetype}%)%0* "
         " file format (eg. unix, dos, etc..)
