@@ -43,7 +43,7 @@ if !exists('g:NeatStatusLine_color_position')
 endif
 
 if !exists('g:NeatStatusLine_color_modified')
-    let g:NeatStatusLine_color_modified = 'guifg=#ffffff guibg=#2C323C gui=bold ctermfg=15 ctermbg=0'
+    let g:NeatStatusLine_color_modified = 'guifg=#ffffff guibg=#5f8787 gui=bold ctermfg=15 ctermbg=0'
 endif
 
 if !exists('g:NeatStatusLine_color_line')
