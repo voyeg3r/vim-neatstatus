@@ -181,7 +181,7 @@ if has('statusline')
         let &stl.=" [%n] "
         let &stl.="%6*%{GitInfo()}%0*"
         " file path
-        let &stl.=" %<%f"
+        let &stl.=" %<%F"
         " modified / unmodified (purple)
         let &stl.="%03(%6*%{&modified ? ' + ':''}%)%0*"
         " read only, modified, modifiable flags in brackets
