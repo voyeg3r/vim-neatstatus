@@ -56,7 +56,7 @@ endif
 
 " cor da paleta #5f8787
 if !exists('g:NeatStatusLine_color_paste')
-    let g:NeatStatusLine_color_paste = 'guifg=#000000 guibg=#ffffff gui=bold ctermfg=0 ctermbg=7 cterm=bold'
+    let g:NeatStatusLine_color_paste = 'guifg=#000000 guibg=#bbbbbb gui=bold ctermfg=0 ctermbg=7 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_separator')
@@ -210,7 +210,7 @@ if has('statusline')
         " readonly flag
         " ec (&ro || !&modifiable ? 'no' : 'yes')
         let &stl.="%6*%(%{(&ro!=0?'  ':'')}%)%0*"
-        let &stl.="%6*%01(%{&list?'¶':''}%)%0* "
+        let &stl.="%6*%01(%{&list?'':''}%)%0* "
         let &stl.="%6*%01(%{&hls?'H':''}%)%0* "
         let &stl.="%6*%01(%{(&paste?'P':'')}%)%0* "
         " file type (eg. python, ruby, etc..)
@@ -219,7 +219,7 @@ if has('statusline')
         "let &stl.=" %{&fileformat} "
         let &stl.="%9* %{Platform()} %0*"
         " file encoding (eg. utf8, latin1, etc..)
-        let &stl.="%(%{(&fenc!=''?&fenc:&enc)}%) "
+        let &stl.=" %(%{(&fenc!=''?&fenc:&enc)}%) "
         "line number (pink) / total lines
         let &stl.=" %03l/%03L "
         " percentage done
