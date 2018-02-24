@@ -56,7 +56,7 @@ endif
 
 " cor da paleta #5f8787
 if !exists('g:NeatStatusLine_color_paste')
-    let g:NeatStatusLine_color_paste = 'guifg=#ffffff guibg=#FF5722 gui=bold ctermfg=0 ctermbg=7 cterm=bold'
+    let g:NeatStatusLine_color_paste = 'guifg=#000000 guibg=#ffffff gui=bold ctermfg=0 ctermbg=7 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_separator')
@@ -195,7 +195,7 @@ if has('statusline')
         " session name
         "let &stl.="%5* %{g:neatstatus_session} %0*"
         " buffer number
-        let &stl.=" [%n] "
+        let &stl.=" b%n "
         let &stl.="%6*%{GitInfo()}%0*"
         " file path
         let &stl.=" %<%F"
@@ -214,7 +214,7 @@ if has('statusline')
         let &stl.="%6*%01(%{&hls?'H':''}%)%0* "
         let &stl.="%6*%01(%{(&paste?'P':'')}%)%0* "
         " file type (eg. python, ruby, etc..)
-        let &stl.="%(%{&filetype}%)"
+        let &stl.="%(%{&filetype}%) "
         " file format (eg. unix, dos, etc..)
         "let &stl.=" %{&fileformat} "
         let &stl.="%9* %{Platform()} %0*"
