@@ -1,6 +1,6 @@
 " NeatStatus (c) 2012 Lukasz Grzegorz Maciak
 " Neat and simple status line - because Powerline is overrated
-" Last Change: 2018 mar 19 06:51
+" Last Change: 2018 mar 19 07:01
 "    _   _            _   ____  _        _
 "   | \ | | ___  __ _| |_/ ___|| |_ __ _| |_ _   _ ___
 "   |  \| |/ _ \/ _` | __\___ \| __/ _` | __| | | / __|
@@ -223,7 +223,7 @@ if has('statusline')
         let &stl.=" %(%{(&fenc!=''?&fenc:&enc)}%) "
         "line number (pink) / total lines
         "let &stl.=" %03l/%03L "
-        let &stl.=" %-3l/%-3L "
+        let &stl.=" %3l/%-3L "
         " percentage done
         let &stl.="%1* %03p%% "
         " column number (minimum width is 2)
